@@ -2,6 +2,7 @@ package com.message.failure.messagefailure.telegram;
 
 import com.message.failure.messagefailure.data.Factory;
 import com.message.failure.messagefailure.model.entity.User;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -20,8 +21,10 @@ public class TelegramBot extends TelegramLongPollingBot {
     private final String botName;
     private final Map<Long, UserTelegramBot> telegramUsers;
 
-    public TelegramBot() {
+    public TelegramBot(@Value("${telegram.bot.secret.name}") String botName, @Value("${telegram.bot.secret.token}") String token) {
         super("8465197046:AAHloA-UX2cCa8wfugpEMZlQLtIN8qZ-oJs");
+        System.out.println(botName);
+        System.out.println(token);
         this.botName = "message_failure_bot";
 
         telegramUsers = new HashMap<>();
