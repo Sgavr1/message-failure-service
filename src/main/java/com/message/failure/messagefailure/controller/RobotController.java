@@ -19,14 +19,14 @@ public class RobotController {
 
     @GetMapping("/robots")
     public List<Robot> getRobots(){
-        return service.getRobots();
+        return null;
     }
     @PostMapping("/robot")
     public RobotFullDto addRobot(@RequestBody RobotCreateDTO dto){
-        return service.create(dto);
+        return null;
     }
     @PutMapping("/robot")
     public RobotFullDto updateRobot(@RequestBody RobotUpdateDTO dto){
-        return service.update(dto);
+        return null;
     }
 }
