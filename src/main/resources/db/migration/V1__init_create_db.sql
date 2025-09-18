@@ -2,7 +2,9 @@ CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(20) NOT NULL,
     last_name VARCHAR(20) NOT NULL,
-    role VARCHAR(20) NOT NULL
+    role VARCHAR(20) NOT NULL,
+    login VARCHAR(20) NOT NULL,
+    password VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE robots(
@@ -20,6 +22,15 @@ CREATE TABLE afos(
 CREATE TABLE line_products(
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE reports(
+    id SERIAL PRIMARY KEY,
+    team_leader_id INTEGER REFERENCES users(id),
+    operator_id INTEGER REFERENCES users(id),
+    time_begin TIMESTAMP NOT NULL,
+    time_finish TIMESTAMP,
+    description TEXT
 );
 
 CREATE TABLE line_products_team_leaders(
