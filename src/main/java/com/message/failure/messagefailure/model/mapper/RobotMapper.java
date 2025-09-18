@@ -9,9 +9,9 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface RobotMapper {
-    Robot getEntity(RobotCreateDTO dto);
-    Robot getEntity(RobotUpdateDTO dto);
+    Robot get(RobotCreateDTO dto);
+    Robot get(RobotUpdateDTO dto);
 
-    RobotFullDTO getFullDto(Robot entity);
-    RobotLargeDTO getLargeDto(Robot entity);
+    RobotFullDTO getFull(Robot entity);
+    RobotLargeDTO getLarge(Robot entity);
 }
