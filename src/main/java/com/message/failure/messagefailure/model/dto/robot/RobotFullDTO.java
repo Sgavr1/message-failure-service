@@ -1,19 +1,21 @@
 package com.message.failure.messagefailure.model.dto.robot;
 
-public class RobotUpdateDTO {
+import com.message.failure.messagefailure.model.dto.afo.AfoLargeDTO;
+
+public class RobotFullDTO {
     private long id;
     private String name;
     private String state;
-    private long afoId;
+    private AfoLargeDTO afo;
 
-    public RobotUpdateDTO() {
+    public RobotFullDTO() {
     }
 
-    public RobotUpdateDTO(long id, String name, String state, long afoId) {
+    public RobotFullDTO(long id, String name, String state, AfoLargeDTO afo) {
         this.id = id;
         this.name = name;
         this.state = state;
-        this.afoId = afoId;
+        this.afo = afo;
     }
 
     public long getId() {
@@ -40,11 +42,11 @@ public class RobotUpdateDTO {
         this.state = state;
     }
 
-    public long getAfoId() {
-        return afoId;
+    public AfoLargeDTO getAfo() {
+        return afo;
     }
 
-    public void setAfoId(long afoId) {
-        this.afoId = afoId;
+    public void setAfo(AfoLargeDTO afo) {
+        this.afo = afo;
     }
 }

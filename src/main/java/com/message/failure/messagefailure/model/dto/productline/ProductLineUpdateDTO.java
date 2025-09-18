@@ -1,17 +1,25 @@
-package com.message.failure.messagefailure.model.dto.robot;
+package com.message.failure.messagefailure.model.dto.productline;
 
-public class RobotCreateDTO {
+public class ProductLineUpdateDTO {
+    private long id;
     private String name;
     private String status;
-    private long afoId;
 
-    public RobotCreateDTO() {
+    public ProductLineUpdateDTO() {
     }
 
-    public RobotCreateDTO(String name, String status, long afoId) {
+    public ProductLineUpdateDTO(long id, String name, String status) {
+        this.id = id;
         this.name = name;
         this.status = status;
-        this.afoId = afoId;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -28,13 +36,5 @@ public class RobotCreateDTO {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public long getAfoId() {
-        return afoId;
-    }
-
-    public void setAfoId(long afoId) {
-        this.afoId = afoId;
     }
 }

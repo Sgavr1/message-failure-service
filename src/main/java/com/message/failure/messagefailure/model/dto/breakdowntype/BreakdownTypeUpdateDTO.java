@@ -1,18 +1,16 @@
-package com.message.failure.messagefailure.model.dto.robot;
+package com.message.failure.messagefailure.model.dto.breakdowntype;
 
-public class RobotUpdateDTO {
+public class BreakdownTypeUpdateDTO {
     private long id;
     private String name;
-    private String state;
     private long afoId;
 
-    public RobotUpdateDTO() {
+    public BreakdownTypeUpdateDTO() {
     }
 
-    public RobotUpdateDTO(long id, String name, String state, long afoId) {
+    public BreakdownTypeUpdateDTO(long id, String name, long afoId) {
         this.id = id;
         this.name = name;
-        this.state = state;
         this.afoId = afoId;
     }
 
@@ -30,14 +28,6 @@ public class RobotUpdateDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
     }
 
     public long getAfoId() {

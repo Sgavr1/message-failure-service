@@ -3,26 +3,22 @@ package com.message.failure.messagefailure.model.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "robots")
-public class Robot {
+@Table(name = "breakdown_types")
+public class BreakdownType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "name")
     private String name;
-    @Column(name = "status")
-    private String status;
-    @ManyToOne
-    @JoinColumn(name = "afo_id")
+    @Column(name = "afo_id")
     private Afo afo;
 
-    public Robot() {
+    public BreakdownType() {
     }
 
-    public Robot(long id, String name, String status, Afo afo) {
+    public BreakdownType(long id, String name, Afo afo) {
         this.id = id;
         this.name = name;
-        this.status = status;
         this.afo = afo;
     }
 
@@ -40,14 +36,6 @@ public class Robot {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Afo getAfo() {

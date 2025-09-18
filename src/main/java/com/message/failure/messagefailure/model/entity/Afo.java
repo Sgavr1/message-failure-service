@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "line_products")
-public class ProductLine {
+@Table(name = "afos")
+public class Afo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -14,17 +14,20 @@ public class ProductLine {
     private String name;
     @Column(name = "status")
     private String status;
-    @OneToMany(mappedBy = "productLine")
-    private List<Afo> afos;
+    @ManyToOne
+    @JoinColumn(name = "line_product_id")
+    private ProductLine productLine;
+    @OneToMany(mappedBy = "afo")
+    private List<Robot> robots;
 
-    public ProductLine() {
+    public Afo() {
     }
 
-    public ProductLine(long id, String name, String status, List<Afo> afos) {
+    public Afo(long id, String name, String status, ProductLine productLine) {
         this.id = id;
         this.name = name;
         this.status = status;
-        this.afos = afos;
+        this.productLine = productLine;
     }
 
     public long getId() {
@@ -51,11 +54,11 @@ public class ProductLine {
         this.status = status;
     }
 
-    public List<Afo> getAfos() {
-        return afos;
+    public ProductLine getProductLine() {
+        return productLine;
     }
 
-    public void setAfos(List<Afo> afos) {
-        this.afos = afos;
+    public void setProductLine(ProductLine productLine) {
+        this.productLine = productLine;
     }
 }

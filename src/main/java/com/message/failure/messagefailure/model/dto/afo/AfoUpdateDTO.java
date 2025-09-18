@@ -1,29 +1,19 @@
-package com.message.failure.messagefailure.model.entity;
+package com.message.failure.messagefailure.model.dto.afo;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "robots")
-public class Robot {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class AfoUpdateDTO {
     private long id;
-    @Column(name = "name")
     private String name;
-    @Column(name = "status")
     private String status;
-    @ManyToOne
-    @JoinColumn(name = "afo_id")
-    private Afo afo;
+    private long productLineId;
 
-    public Robot() {
+    public AfoUpdateDTO() {
     }
 
-    public Robot(long id, String name, String status, Afo afo) {
+    public AfoUpdateDTO(long id, String name, String status, long productLineId) {
         this.id = id;
         this.name = name;
         this.status = status;
-        this.afo = afo;
+        this.productLineId = productLineId;
     }
 
     public long getId() {
@@ -50,11 +40,11 @@ public class Robot {
         this.status = status;
     }
 
-    public Afo getAfo() {
-        return afo;
+    public long getProductLineId() {
+        return productLineId;
     }
 
-    public void setAfo(Afo afo) {
-        this.afo = afo;
+    public void setProductLineId(long productLineId) {
+        this.productLineId = productLineId;
     }
 }

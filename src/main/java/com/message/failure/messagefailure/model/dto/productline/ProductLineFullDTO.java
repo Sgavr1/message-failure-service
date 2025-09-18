@@ -1,26 +1,19 @@
-package com.message.failure.messagefailure.model.entity;
+package com.message.failure.messagefailure.model.dto.productline;
 
-import jakarta.persistence.*;
+import com.message.failure.messagefailure.model.dto.afo.AfoLargeDTO;
 
 import java.util.List;
 
-@Entity
-@Table(name = "line_products")
-public class ProductLine {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProductLineFullDTO {
     private long id;
-    @Column(name = "name")
     private String name;
-    @Column(name = "status")
     private String status;
-    @OneToMany(mappedBy = "productLine")
-    private List<Afo> afos;
+    private List<AfoLargeDTO> afos;
 
-    public ProductLine() {
+    public ProductLineFullDTO() {
     }
 
-    public ProductLine(long id, String name, String status, List<Afo> afos) {
+    public ProductLineFullDTO(long id, String name, String status, List<AfoLargeDTO> afos) {
         this.id = id;
         this.name = name;
         this.status = status;
@@ -51,11 +44,11 @@ public class ProductLine {
         this.status = status;
     }
 
-    public List<Afo> getAfos() {
+    public List<AfoLargeDTO> getAfos() {
         return afos;
     }
 
-    public void setAfos(List<Afo> afos) {
+    public void setAfos(List<AfoLargeDTO> afos) {
         this.afos = afos;
     }
 }

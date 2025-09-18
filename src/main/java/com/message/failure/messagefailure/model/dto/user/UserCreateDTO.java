@@ -1,42 +1,21 @@
-package com.message.failure.messagefailure.model.entity;
+package com.message.failure.messagefailure.model.dto.user;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    @Column(name = "first_name")
+public class UserCreateDTO {
     private String firstName;
-    @Column(name = "last_name")
     private String lastName;
-    @Column(name = "role")
     private String role;
-    @Column(name = "login")
     private String login;
-    @Column(name = "password")
     private String password;
 
-    public User() {
+    public UserCreateDTO() {
     }
 
-    public User(long id, String firstName, String lastName, String role, String login, String password) {
-        this.id = id;
+    public UserCreateDTO(String firstName, String lastName, String role, String login, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
         this.login = login;
         this.password = password;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -78,4 +57,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

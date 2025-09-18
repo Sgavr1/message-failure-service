@@ -1,17 +1,17 @@
-package com.message.failure.messagefailure.model.dto.robot;
+package com.message.failure.messagefailure.model.dto.afo;
 
-public class RobotLargeDTO {
+public class AfoLargeDTO {
     private long id;
     private String name;
-    private String state;
+    private String status;
 
-    public RobotLargeDTO() {
+    public AfoLargeDTO() {
     }
 
-    public RobotLargeDTO(long id, String name, String state) {
+    public AfoLargeDTO(long id, String name, String status) {
         this.id = id;
         this.name = name;
-        this.state = state;
+        this.status = status;
     }
 
     public long getId() {
@@ -30,11 +30,11 @@ public class RobotLargeDTO {
         this.name = name;
     }
 
-    public String getState() {
-        return state;
+    public String getStatus() {
+        return status;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
