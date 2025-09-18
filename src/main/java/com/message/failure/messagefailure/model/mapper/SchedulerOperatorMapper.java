@@ -7,7 +7,7 @@ import com.message.failure.messagefailure.model.dto.scheduler.operator.Scheduler
 import com.message.failure.messagefailure.model.entity.SchedulerOperator;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface SchedulerOperatorMapper {
     SchedulerOperator get(SchedulerOperatorCreateDTO dto);
     SchedulerOperator get(SchedulerOperatorUpdateDTO dto);

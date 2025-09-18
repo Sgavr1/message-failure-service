@@ -7,7 +7,7 @@ import com.message.failure.messagefailure.model.dto.productline.ProductLineUpdat
 import com.message.failure.messagefailure.model.entity.ProductLine;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface ProductLineMapper {
     ProductLine get(ProductLineCreateDTO dto);
     ProductLine get(ProductLineUpdateDTO dto);

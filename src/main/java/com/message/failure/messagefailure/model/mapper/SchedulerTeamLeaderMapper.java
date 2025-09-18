@@ -7,7 +7,7 @@ import com.message.failure.messagefailure.model.dto.scheduler.teamleader.Schedul
 import com.message.failure.messagefailure.model.entity.SchedulerTeamLeader;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface SchedulerTeamLeaderMapper {
     SchedulerTeamLeader get(SchedulerTeamLeaderCreateDTO dto);
     SchedulerTeamLeader get(SchedulerTeamLeaderUpdateDTO dto);

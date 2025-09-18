@@ -7,7 +7,7 @@ import com.message.failure.messagefailure.model.dto.report.ReportUpdateDTO;
 import com.message.failure.messagefailure.model.entity.Report;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface ReportMapper {
     Report get(ReportCreateDTO dto);
     Report get(ReportUpdateDTO dto);

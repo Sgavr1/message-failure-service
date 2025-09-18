@@ -10,7 +10,8 @@ public class BreakdownType {
     private long id;
     @Column(name = "name")
     private String name;
-    @Column(name = "afo_id")
+    @ManyToOne
+    @JoinColumn(name = "afo_id")
     private Afo afo;
 
     public BreakdownType() {

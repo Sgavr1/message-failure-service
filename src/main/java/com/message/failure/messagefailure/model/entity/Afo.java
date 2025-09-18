@@ -23,11 +23,12 @@ public class Afo {
     public Afo() {
     }
 
-    public Afo(long id, String name, String status, ProductLine productLine) {
+    public Afo(long id, String name, String status, ProductLine productLine, List<Robot> robots) {
         this.id = id;
         this.name = name;
         this.status = status;
         this.productLine = productLine;
+        this.robots = robots;
     }
 
     public long getId() {
@@ -60,5 +61,13 @@ public class Afo {
 
     public void setProductLine(ProductLine productLine) {
         this.productLine = productLine;
+    }
+
+    public List<Robot> getRobots() {
+        return robots;
+    }
+
+    public void setRobots(List<Robot> robots) {
+        this.robots = robots;
     }
 }

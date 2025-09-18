@@ -6,7 +6,7 @@ import com.message.failure.messagefailure.model.dto.breakdowntype.BreakdownTypeU
 import com.message.failure.messagefailure.model.entity.BreakdownType;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface BreakdownMapper {
     BreakdownType get(BreakdownTypeCreateDTO dto);
     BreakdownType get(BreakdownTypeUpdateDTO dto);

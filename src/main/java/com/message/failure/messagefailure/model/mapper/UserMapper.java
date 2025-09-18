@@ -7,7 +7,7 @@ import com.message.failure.messagefailure.model.dto.user.UserUpdateDTO;
 import com.message.failure.messagefailure.model.entity.User;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface UserMapper {
     User get(UserCreateDTO dto);
     User get(UserUpdateDTO dto);
